@@ -58,3 +58,10 @@ st.dataframe(filtered_df[['Date', 'PH', 'Station_Name']])
 # Summary Statistics
 st.subheader("Statistical Summary")
 st.write(filtered_df['PH'].describe())
+
+
+# Report Button
+if st.button("Report"):
+    with open("index.html", "r") as f:
+        html_content = f.read()
+    st.components.v1.html(html_content, height=600)
